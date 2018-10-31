@@ -1,6 +1,6 @@
 import java.awt.Color;
 
-public class RandomPanel extends WordPanel {
+public class RandomPanel extends RandomChangePanel {
 	
 	/**
 	 * 
@@ -17,7 +17,7 @@ public class RandomPanel extends WordPanel {
 		return new Color((int) (Math.random()*255),(int) (Math.random()*255),(int) (Math.random()*255));
 	}
 	
-	public String getWord() {
+	public String chooseWord() {
 		return "test";
 	}
 	

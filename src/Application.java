@@ -1,4 +1,6 @@
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,10 +56,11 @@ public class Application extends JPanel implements Runnable {
 	public Application(int rows, int cols) {
 		this.setLayout(new GridLayout(rows, cols));
 		int num = rows*cols;
-		words = new WordPanel[num];
+		words = new RandomChangePanel[num];
 		for(int i=0; i<num; i++) {
 			words[i] = new GrayPanel(100);
 			this.add(words[i]);
+			words[i].addMouseListener(new WordClickListener(words[i]));
 		}
 		Thread thread = new Thread(this);
 		thread.start();
@@ -66,6 +69,19 @@ public class Application extends JPanel implements Runnable {
 	public static String randomString() {
 		int random = (int) (Math.random()*wordList.length);
 		return wordList[random];
+	}
+	
+	public class WordClickListener extends MouseAdapter {
+		private WordPanel panel;
+		
+		public WordClickListener(WordPanel panel) {
+			this.panel = panel;
+		}
+		
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			this.panel.onClick(e);
+		}
 	}
 
 }

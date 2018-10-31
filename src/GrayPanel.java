@@ -1,6 +1,6 @@
 import java.awt.Color;
 
-public class GrayPanel extends WordPanel {
+public class GrayPanel extends RandomChangePanel {
 	
 	/**
 	 * 
@@ -27,7 +27,7 @@ public class GrayPanel extends WordPanel {
 	}
 
 	@Override
-	public String getWord() {
+	public String chooseWord() {
 		// TODO Auto-generated method stub
 		return Application.randomString();
 	}
