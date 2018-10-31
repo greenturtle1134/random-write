@@ -45,7 +45,7 @@ public class Application extends JPanel implements Runnable {
 
 		JFrame frame = new JFrame("RandomType");
 		frame.setSize(1600, 400);
-		Application application = new Application(6, 8);
+		Application application = new Application(6, 6);
 		frame.setContentPane(application);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
