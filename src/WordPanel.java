@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,7 +21,8 @@ public abstract class WordPanel extends JPanel {
 		super();
 		this.setChangeTime(System.currentTimeMillis());
 		this.setLabel(new JLabel(this.getWord()));
-		this.getLabel().setForeground(Color.GREEN);
+		this.getLabel().setForeground(Color.WHITE);
+		this.getLabel().setFont(new Font("Serif", Font.BOLD, 28));
 		this.add(label);
 		this.setOpaque(true);
 	}
